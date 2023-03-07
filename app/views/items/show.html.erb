@@ -1,0 +1,5 @@
+<p><%= @item.item_name %></p>
+<p><%= @item.description %></p>
+<p><%= @item.price %></p>
+<p><%= @item.user.fullname %></p>
+<p><%= link_to "buy Item", new_receipts_path(@item),data: { "turbo-method": :post }, class: "btn btn-primary"%></p>
