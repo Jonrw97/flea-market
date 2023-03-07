@@ -1,0 +1,13 @@
+<h2>Profile</h2>
+<h4>sell</h4>
+<% @sell.each do |s| %>
+  <% if s.receipt.nil? %>
+    <p>For Sale: <%= link_to s.item_name, item_path(s)%></p>
+  <% else %>
+  <p>Sold: <%= link_to s.item_name, receipt_path(s.receipt)%></p>
+  <% end %>
+<% end %>
+<h4>buy</h4>
+<% @buy.each do |b| %>
+  <p><%= link_to b.item.item_name, receipt_path(b)%></p>
+<% end %>

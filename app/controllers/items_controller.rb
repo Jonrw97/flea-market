@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.all
+    items = Item.all
+    @sorted_items = items.select { |item| item.receipt.nil?}
   end
 
   def show
@@ -38,6 +39,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:item_name, :description, :price)
+    params.require(:item).permit(:item_name, :description, :price, :photo)
   end
 end
