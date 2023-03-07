@@ -2,11 +2,16 @@
 <p><%= @item.description %></p>
 <p><%= @item.price %></p>
 <p><%= @item.user.fullname %></p>
-<%= cl_image_tag @item.photo.key, height: 300, width: 400, crop: :fill %>
-  <% if current_user == @item.user%>
-<p><%= link_to "edit item",  edit_item_path(@item)%></p>
-<p><%= link_to "Delete this listing",
-  delete_item_path(@item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></p>
-  <% else %>
-<p><%= link_to "buy Item", new_receipts_path(@item),data: { "turbo-method": :post }, class: "btn btn-primary"%></p>
-  <% end %>
+
+<% if @item.photo.attached? %>
+
+  <%= cl_image_tag @item.photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+
+<% if current_user == @item.user%>
+  <p><%= link_to "edit item",  edit_item_path(@item)%></p>
+  <p><%= link_to "Delete this listing",
+    delete_item_path(@item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></p>
+<% else %>
+  <p><%= link_to "buy Item", new_receipts_path(@item),data: { "turbo-method": :post }, class: "btn btn-primary"%></p>
+<% end %>
