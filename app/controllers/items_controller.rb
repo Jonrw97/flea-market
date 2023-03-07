@@ -14,6 +14,7 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
+    render :edit, status: :unprocessable_entity unless current_user == @item.user
     if @item.update(item_params)
       redirect_to item_path(@item)
     else
@@ -27,7 +28,8 @@ class ItemsController < ApplicationController
 
   def destroy
     @item = Item.find(params[:id])
-    @item.destroy
+    @item.destroy if current_user == @item.user # 1
+
     redirect_to items_path, status: :see_other
   end
 
