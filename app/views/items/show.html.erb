@@ -7,5 +7,6 @@
 <p><%= link_to "edit item",  edit_item_path(@item)%></p>
 <p><%= link_to "Delete this listing",
   delete_item_path(@item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></p>
-  <% end %>
+  <% else %>
 <p><%= link_to "buy Item", new_receipts_path(@item),data: { "turbo-method": :post }, class: "btn btn-primary"%></p>
+  <% end %>
