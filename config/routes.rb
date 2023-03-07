@@ -10,8 +10,9 @@ Rails.application.routes.draw do
   get 'items/new', to: 'items#new'
   get 'receipts/:id', to: 'receipts#show', as: 'receipt'
   get 'items/:id', to: 'items#show', as: 'item'
-  get "items/:id/edit", to: "items#edit", as: 'edit_item'
-  patch "items/:id", to: "items#update"
+  get 'items/:id/edit', to: 'items#edit', as: 'edit_item'
+  patch 'items/:id', to: 'items#update'
   post 'items', to: 'items#create'
   post 'items/:id/receipts', to: 'receipts#create', as: 'new_receipts'
+  delete 'items/:id', to: 'items#destroy', as: 'delete_item'
 end
