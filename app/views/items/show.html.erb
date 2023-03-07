@@ -2,4 +2,5 @@
 <p><%= @item.description %></p>
 <p><%= @item.price %></p>
 <p><%= @item.user.fullname %></p>
+<p><%= link_to "edit item",  edit_item_path(@item)%></p>
 <p><%= link_to "buy Item", new_receipts_path(@item),data: { "turbo-method": :post }, class: "btn btn-primary"%></p>
