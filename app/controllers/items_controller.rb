@@ -25,6 +25,12 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to items_path, status: :see_other
+  end
+
   def create
     @item = Item.new(item_params)
     @item.user = current_user
@@ -33,7 +39,6 @@ class ItemsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-
   end
 
   private
