@@ -7,5 +7,8 @@ Rails.application.routes.draw do
   # root "articles#index"
   get 'items', to: 'items#index'
   get 'items/new', to: 'items#new'
+  get 'receipts/:id', to: 'receipts#show', as: 'receipt'
+  get 'item/:id', to: 'items#show', as: 'item'
   post 'items', to: 'items#create'
+  post 'items/:id/receipts', to: 'receipts#create', as: 'new_receipts'
 end
