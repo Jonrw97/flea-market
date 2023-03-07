@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.all
+    items = Item.all
+    @sorted_items = items.select { |item| item.receipt.nil?}
   end
 
   def show

@@ -3,6 +3,11 @@ class ReceiptsController < ApplicationController
     @receipt = Receipt.find(params[:id])
   end
 
+  def index
+    @sell = current_user.items
+    @buy = Receipt.where(current_user.id == :user_id)
+  end
+
   def create
     item = Item.find(params[:id])
     receipt = Receipt.new
