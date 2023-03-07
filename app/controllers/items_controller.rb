@@ -8,9 +8,13 @@ class ItemsController < ApplicationController
   end
 
   def create
-    raise
-    @item = Item.new
-    @item.save
+    @item = Item.new(item_params)
+    @item.user = current_user
+    if @item.save
+      redirect_to items_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private
