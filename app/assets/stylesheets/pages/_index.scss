@@ -1,7 +1,11 @@
 // Import page-specific CSS files here.
 @import "home";
 
-.btn {
+.create-item-btn {
   background-color: black;
   color: white;
+  padding: 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  margin: 5px;
 }
