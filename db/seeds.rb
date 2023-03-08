@@ -48,7 +48,7 @@ item2 = Item.new(
 item2.photo.attach(
   filename: 'Taylormade_Clubs.jpg',
   content_type: 'image/jpg',
-  io: URI.open('https://res.cloudinary.com/dgnolwlop/image/upload/v1678269083/development/cmamazs1zql7gfgckfr8zweea2hr.jpg')
+  io: URI.open('https://images.unsplash.com/photo-1678213786687-b8af05d10c9e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80')
 )
 item2.save
 p "Created item id: #{item2.id}"
