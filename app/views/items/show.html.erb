@@ -9,9 +9,9 @@
 <% end %>
 
 <% if current_user == @item.user%>
-  <p><%= link_to "edit item",  edit_item_path(@item)%></p>
+  <p><%= link_to "edit item",  edit_item_path(@item),class: "create-item-btn"%></p>
   <p><%= link_to "Delete this listing",
-    delete_item_path(@item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></p>
+    delete_item_path(@item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},class: "create-item-btn"%></p>
 <% else %>
   <p><%= link_to "buy Item", new_receipts_path(@item),data: { "turbo-method": :post }, class: "btn btn-primary"%></p>
 <% end %>
