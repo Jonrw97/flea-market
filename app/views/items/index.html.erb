@@ -1,3 +1,6 @@
+<%= link_to "sell an item", items_new_path, class: "create-item-btn" %>
+
+<h4><%= "Items currently for sale" %></h4>
 <ul>
   <% @sorted_items.each do |item| %>
     <li><%= link_to item.item_name, item_path(item), class: "btn btn-primary"%></li>
@@ -6,5 +9,3 @@
     <% end %>
   <% end %>
 </ul>
-
-<%= link_to "create new item", items_new_path, class: "create-item-btn" %>
