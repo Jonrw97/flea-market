@@ -9,10 +9,10 @@
 
 <div class="cards d-flex flex-wrap justify-content-around">
   <% @sorted_items.each do |item| %>
-    <div class="card m-2" style="width: 25rem;">
+    <div class="card m-2 shadow mb-3 bg-body-tertiary rounded" style="width: 25rem;">
       <div class="card-title">
         <% if item.photo.attached? %>
-          <%= cl_image_tag(item.photo.key, width: 400, height: 300, crop: :fill)  %>
+          <%= cl_image_tag(item.photo.key, width: 399, height: 300, crop: :fill)  %>
           <% end %>
           <h3><%= item.item_name %></h3>
         </div>
