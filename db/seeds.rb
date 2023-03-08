@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 # Item.create(item_name: "car", description: "broken", price: 1000, user_id: 1)
-require 'uri'
+require 'open-uri'
 
 p 'Cleaning db'
 Receipt.destroy_all
@@ -23,7 +23,7 @@ user1 = User.create(
   password: 'test123'
 )
 p "Created user id: #{user1.id}"
-p "reating items for user #{user1.id}"
+p "Creating items for user #{user1.id}"
 
 item1 = Item.new(
   item_name: "Mustang",
