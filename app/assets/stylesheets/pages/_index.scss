@@ -9,3 +9,46 @@
   text-decoration: none;
   margin: 5px;
 }
+
+a:hover {
+  background-color: lightgray;
+  color: black;
+}
+
+.sell-btn {
+  border-radius: 50%;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.item-list {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-card {
+  border: black 1px solid;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px 2px gray;
+  padding: 5px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.info {
+  font-size: 14px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+// .sell-btn-home {
+//   border-radius: 50%;
+// }
+// .card {
+//   display: flex;
+//   align-items: left;
+//   margin: 10px;
+// }
