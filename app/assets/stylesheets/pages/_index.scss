@@ -9,3 +9,37 @@
   text-decoration: none;
   margin: 5px;
 }
+
+a:hover {
+  background-color: lightgray;
+  color: black;
+}
+
+.sell-btn {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.item-list {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-card {
+  border: black 1px solid;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px 2px gray;
+  padding: 5px;
+}
+
+a {
+  text-decoration: none;
+}
+
+// .card {
+//   display: flex;
+//   align-items: left;
+//   margin: 10px;
+// }
