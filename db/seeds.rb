@@ -33,6 +33,7 @@ item1 = Item.new(
 )
 item1.photo.attach(
   filename: 'mustang.jpg',
+  content_type: 'image/jpg',
   io: URI.open('https://res.cloudinary.com/dgnolwlop/image/upload/v1678196003/tscjdqtzp3g0l3vle799.jpg')
 )
 item1.save
@@ -46,6 +47,7 @@ item2 = Item.new(
 )
 item2.photo.attach(
   filename: 'Taylormade_Clubs.jpg',
+  content_type: 'image/jpg',
   io: URI.open('https://res.cloudinary.com/dgnolwlop/image/upload/v1678269083/development/cmamazs1zql7gfgckfr8zweea2hr.jpg')
 )
 item2.save
