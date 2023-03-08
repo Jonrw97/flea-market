@@ -5,7 +5,8 @@ class ReceiptsController < ApplicationController
 
   def index
     @sell = current_user.items
-    @buy = Receipt.where(current_user.id == :user_id)
+    receipts = Receipt.all
+    @buy = receipts.select { |r| current_user.id == r.user_id }
   end
 
   def create
