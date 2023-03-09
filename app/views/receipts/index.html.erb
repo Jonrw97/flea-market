@@ -18,8 +18,8 @@
     </div>
     <div class="profile-card">
       <h4>Bought Items</h4>
-        <div class="profile-card-new">
         <% @buy.each do |b| %>
+        <div class="profile-card-new">
           <p><%= link_to b.item.item_name, receipt_path(b)%></p>
           </div>
         <% end %>

@@ -16,11 +16,11 @@
 
       <% if current_user == @item.user%>
         <div class="d-flex justify-content-end align-content-end">
-            <%= link_to "edit item",  edit_item_path(@item),class: "create-item-btn"%>
-            <%= link_to "Delete this listing",
+            <%= link_to "Edit",  edit_item_path(@item),class: "create-item-btn"%>
+            <%= link_to "Delete",
               delete_item_path(@item),
               data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
-              class: "create-item-btn"%>
+              class: "create-item-btn warning"%>
         </div>
       <% else %>
         <div class="d-flex align-self-end justify-content-end">

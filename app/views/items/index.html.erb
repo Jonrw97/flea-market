@@ -1,8 +1,8 @@
-<div class="index">
   <div class="sell-btn">
-    <%= link_to "sell an item", items_new_path, class: "create-item-btn" %>
+    <%= link_to "SELL AN ITEM", items_new_path, class: "sell-item-btn" %>
   </div>
-  <%= form_with url: items_path, method: :get, class: "d-flex ps-5 pe-5" do %>
+<div class="index">
+  <%= form_with url: items_path, method: :get, class: "d-flex ps-5 pe-5 mb-5" do %>
     <%= text_field_tag :query,
       params[:query],
       class: "form-control",
