@@ -31,8 +31,9 @@ a:hover {
 .profile-card {
   border: black 1px solid;
   border-radius: 8px;
-  box-shadow: 2px 2px 2px 2px gray;
-  padding: 5px;
+  box-shadow: 2px 2px 2px 2px #2F3E46;
+  padding: 70px;
+  background-color: #CED4DA;
 }
 
 .card {
@@ -69,4 +70,35 @@ h3 {
   background-color: #CAD2C5;
   padding: 20px;
   border-radius: 8px;
+}
+
+.profile {
+  height: 80px;
+  margin-right: 20px;
+  padding: 20px;
+}
+
+.name {
+  margin-right: 20px;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.container-bg {
+  background-color: #CAD2C5;
+  padding: 100px;
+  border-radius: 5px;
+  background-image: linear-gradient(#84A98C, #CAD2C5);
+}
+
+.profile-card-new {
+  background-color: #e9ecef;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  box-shadow: 1px 1px 1px 1px darkgray;
+}
+
+#avatar {
+  border-radius: 50%;
 }
