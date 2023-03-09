@@ -3,26 +3,33 @@
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSst3ib_QSBZRUId-fqyzOFIsRxyajOIGzHdw&usqp=CAU" id="avatar" alt="avatar">
         <p class="ms-2"><%=current_user.fullname %></p>
   </div>
-  <div class="container-bg d-flex flex-wrap justify-content-around">
-    <div class="profile-card">
-      <h4>My Items For Sale</h4>
-        <% @sell.each do |s| %>
-      <div class="profile-card-new">
-          <% if s.receipt.nil? %>
-            <p>For Sale: <%= link_to s.item_name, item_path(s)%></p>
-            <% else %>
-            <p>Sold: <%= link_to s.item_name, receipt_path(s.receipt)%></p>
-          <% end %>
-        </div>
-        <% end %>
-    </div>
-    <div class="profile-card">
-      <h4>Bought Items</h4>
-        <% @buy.each do |b| %>
+
+  <div class="stats">
+    <div class="container-bg d-flex flex-wrap justify-content-around">
+      <div class="profile-card">
+        <h4>My Items For Sale</h4>
+          <% @sell.each do |s| %>
         <div class="profile-card-new">
-          <p><%= link_to b.item.item_name, receipt_path(b)%></p>
+            <% if s.receipt.nil? %>
+            <% @selling_count += 1 %>
+              <p>For Sale: <%= link_to s.item_name, item_path(s)%></p>
+              <% else %>
+              <p>Sold: <%= link_to s.item_name, receipt_path(s.receipt)%></p>
+              <% @sold_count += 1 %>
+            <% end %>
           </div>
-        <% end %>
+          <% end %>
+      </div>
+      <div class="profile-card">
+        <h4>Bought Items</h4>
+          <% @buy.each do |b| %>
+          <div class="profile-card-new">
+            <p><%= link_to b.item.item_name, receipt_path(b)%></p>
+            </div>
+          <% end %>
+      </div>
     </div>
 </div>
-
+<%= @buy.count %>
+<%= @sold_count %>
+<%= @selling_count %>
