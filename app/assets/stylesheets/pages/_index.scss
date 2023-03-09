@@ -35,6 +35,10 @@ a:hover {
   padding: 5px;
 }
 
+.card {
+  background-color: lightgrey;
+}
+
 a {
   text-decoration: none;
 }
@@ -44,11 +48,10 @@ a {
   font-family: 'Courier New', Courier, monospace;
 }
 
-// .sell-btn-home {
-//   border-radius: 50%;
-// }
-// .card {
-//   display: flex;
-//   align-items: left;
-//   margin: 10px;
-// }
+.index {
+  background-color: #CAD2C5;
+}
+
+h3 {
+  padding: 5px;
+}
