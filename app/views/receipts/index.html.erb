@@ -1,67 +1,64 @@
-<div class="container">
-  <div class="profile d-flex justify-content-end">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSst3ib_QSBZRUId-fqyzOFIsRxyajOIGzHdw&usqp=CAU" id="avatar" alt="avatar">
-        <p class="ms-2"><%=current_user.fullname %></p>
-  </div>
+<div class="profile d-flex justify-content-end">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSst3ib_QSBZRUId-fqyzOFIsRxyajOIGzHdw&usqp=CAU" id="avatar" alt="avatar">
+  <p class="ms-2"><%=current_user.fullname %></p>
+</div>
 
-  <div class="stats"></div>
+<div class="stats"></div>
 
-    <div class="container-bg d-flex justify-content-between">
-      <div class="profile-card">
-        <h4>My Items For Sale</h4>
-          <% @sell.each do |s| %>
-            <div class="description d-flex m-1" >
+<div class="container-bg d-flex justify-content-between">
+  <div class="profile-card">
+    <h4>My Items For Sale</h4>
+    <% @sell.each do |s| %>
+      <div class="description d-flex" >
+        <% if s.photo.attached? %>
+          <%= cl_image_tag s.photo.key, height: 150, width: 130, crop: :fill, class: "profile-img" %>
+        <% end %>
 
-              <div class="profile-img m-1">
-                <% if s.photo.attached? %>
-                  <%= cl_image_tag s.photo.key, height: 150, width: 130, crop: :fill, class: "profile-img" %>
-                <% end %>
-              </div>
+        <div class="container">
+          <div class="d-flex justify-content-between">
+            <h6><strong><%= s.item_name %></strong></h6>
+            <p><strong>$<%= s.price %></strong></p>
+          </div>
+          <p class="item-description"><%= s.description %></p>
 
-              <div class="container p-1">
-                <div class="d-flex justify-content-between">
-                  <h6><strong><%= s.item_name %></strong></h6>
-                  <p><strong>$<%= s.price %></strong></p>
-                </div>
-                  <p><%= s.description %></p>
+          <% if s.receipt.nil? %>
+            <% @selling_count += 1 %>
+            <p><%= link_to "Details", item_path(s), class: "create-item-btn"%></p>
+          <% else %>
+            <% @sold_count += 1 %>
+            <p><%= link_to "Receipt", receipt_path(s.receipt), class: "create-item-btn"%></p>
+          <% end %>
 
-                <% if s.receipt.nil? %>
-                  <% @selling_count += 1 %>
-                  <p><%= link_to "Details", item_path(s), class: "create-item-btn"%></p>
-                <% else %>
-                  <% @sold_count += 1 %>
-                  <p><%= link_to "Receipt", receipt_path(s.receipt), class: "create-item-btn"%></p>
-                <% end %>
-
-              </div>
-            </div>
+        </div>
+        </div>
           <% end %>
       </div>
 
       <div class="profile-card">
         <h4>Bought Items</h4>
           <% @buy.each do |b| %>
-          <div class="description d-flex m-1" >
+          <div class="description d-flex" >
 
-              <div class="profile-img m-1">
+              <div class="profile-img">
                 <% if b.item.photo.attached? %>
                   <%= cl_image_tag b.item.photo.key, height: 150, width: 130, crop: :fill, class: "profile-img" %>
                 <% end %>
               </div>
 
-              <div class="container p-1">
+              <div class="container">
                 <div class="d-flex justify-content-between">
                   <h6><strong><%= b.item.item_name %></strong></h6>
                   <p><strong>$<%= b.item.price %></strong></p>
 
                 </div>
-                  <p><%= b.item.description %></p>
+                  <p class="item-description"><%= b.item.description %></p>
                 <p><%= link_to "Receipt", receipt_path(b), class: "create-item-btn"%></p>
               </div>
             </div>
             <% end %>
-        </div>
 </div>
-<%= @buy.count %>
-<%= @sold_count %>
-<%= @selling_count %>
+
+<%#
+@buy.count
+@sold_count
+@selling_count  %>
