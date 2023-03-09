@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
 <div class="container">
     <a class="navbar-brand" href="#">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5yQJ_CIaS7ZRH6kIMt02hmDU3XZF78SLxirV0OFA7ztwoIOopgYlMlyIjwnDZmKb0zgo&usqp=CAU" alt="logo" width="50" height="40">
+      <img src="https://www.shutterstock.com/image-vector/thrift-store-sign-poster-vintage-260nw-2180694957.jpg" alt="logo" width="50" height="40">
     </a>
   </div>
   <div class="container-fluid">
@@ -29,7 +29,9 @@
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+              <%= link_to "Sign up", new_registration_path(resource_name), class: "nav-link" %><br />
+            <% end %>
           </li>
         <% end %>
       </ul>

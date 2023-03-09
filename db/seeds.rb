@@ -6,13 +6,14 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 # Item.create(item_name: "car", description: "broken", price: 1000, user_id: 1)
+require 'open-uri'
 
-p 'delete db'
+p 'Cleaning db'
 Receipt.destroy_all
 Item.destroy_all
 User.destroy_all
 
-p 'creating users'
+p 'Creating users'
 
 user1 = User.create(
   first_name: "Campbell",
@@ -22,7 +23,7 @@ user1 = User.create(
   password: 'test123'
 )
 p "Created user id: #{user1.id}"
-p "creating items for user #{user1.id}"
+p "Creating items for user #{user1.id}"
 
 item1 = Item.new(
   item_name: "Mustang",
@@ -32,6 +33,7 @@ item1 = Item.new(
 )
 item1.photo.attach(
   filename: 'mustang.jpg',
+  content_type: 'image/jpg',
   io: URI.open('https://res.cloudinary.com/dgnolwlop/image/upload/v1678196003/tscjdqtzp3g0l3vle799.jpg')
 )
 item1.save
@@ -45,7 +47,8 @@ item2 = Item.new(
 )
 item2.photo.attach(
   filename: 'Taylormade_Clubs.jpg',
-  io: URI.open('https://res.cloudinary.com/dgnolwlop/image/upload/v1678269083/development/cmamazs1zql7gfgckfr8zweea2hr.jpg')
+  content_type: 'image/jpg',
+  io: URI.open('https://res.cloudinary.com/dgnolwlop/image/upload/v1678284079/golf-clubs_ajzlin.jpg')
 )
 item2.save
 p "Created item id: #{item2.id}"
@@ -70,7 +73,8 @@ item3 = Item.new(
 )
 item3.photo.attach(
   filename: 'Bugatti.jpg',
-  io: URI.open('https://res.cloudinary.com/dgnolwlop/image/upload/v1678268288/development/twyflqhqig5jynkiwfvllrmyijw2.jpg')
+  content_type: 'image/jpg',
+  io: URI.open('https://res.cloudinary.com/dgnolwlop/image/upload/v1678284078/bugatti_nqxzk4.jpg')
 )
 item3.save
 p "Created item id: #{item3.id}"
@@ -83,7 +87,8 @@ item4 = Item.new(
 )
 item4.photo.attach(
   filename: 'PS5.jpg',
-  io: URI.open('https://res.cloudinary.com/dgnolwlop/image/upload/v1678264385/development/1m2ywilg24jbp26jy9dzv0fng5ho.jpg')
+  content_type: 'image/jpg',
+  io: URI.open('https://res.cloudinary.com/dgnolwlop/image/upload/v1678284078/ps5_gclqut.jpg')
 )
 item4.save
 p "Created item id: #{item4.id}"
@@ -108,7 +113,8 @@ item5 = Item.new(
 )
 item5.photo.attach(
   filename: 'Capybara.jpg',
-  io: URI.open('https://res.cloudinary.com/dgnolwlop/image/upload/v1678204935/development/rdia9ked3odd9cohfy9urt9598ce.jpg')
+  content_type: 'image/jpg',
+  io: URI.open('https://res.cloudinary.com/dgnolwlop/image/upload/v1678284078/cappy_cbfyal.jpg')
 )
 item5.save
 p "Created item id: #{item5.id}"
@@ -121,7 +127,8 @@ item6 = Item.new(
 )
 item6.photo.attach(
   filename: 'Open_Bottle_of_tequila.jpg',
-  io: URI.open('https://res.cloudinary.com/dgnolwlop/image/upload/v1678267596/development/dsrl8qcb8btjaumdasx0ya7d9qvx.jpg')
+  content_type: 'image/jpg',
+  io: URI.open('https://res.cloudinary.com/dgnolwlop/image/upload/v1678284078/tequila_c8r425.jpg')
 )
 item6.save
 p "Created item id: #{item6.id}"
@@ -146,7 +153,8 @@ item7 = Item.new(
 )
 item7.photo.attach(
   filename: 'Lifesize_Iron_man_suit.jpg',
-  io: URI.open('https://res.cloudinary.com/dgnolwlop/image/upload/v1678267495/development/bgu1f5jnwy4ydpbzefnc9hcvi2yb.jpg')
+  content_type: 'image/jpg',
+  io: URI.open('https://res.cloudinary.com/dgnolwlop/image/upload/v1678284079/ironman_dxswhh.jpg')
 )
 item7.save
 p "Created item id: #{item7.id}"
@@ -159,7 +167,10 @@ item8 = Item.new(
 )
 item8.photo.attach(
   filename: 'Chucky.jpg',
-  io: URI.open('https://res.cloudinary.com/dgnolwlop/image/upload/v1678267515/development/9f8lgbpqsb1wt8k99t57g9ia5gch.jpg')
+  content_type: 'image/jpg',
+  io: URI.open('https://res.cloudinary.com/dgnolwlop/image/upload/v1678284078/chucky_e1ocb9.jpg')
 )
 item8.save
 p "Created item id: #{item8.id}"
+
+p "Seed complete"
