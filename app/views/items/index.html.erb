@@ -1,11 +1,18 @@
- <div class="index">
-  <div class="sell-btn">
-    <%= link_to "sell an item", items_new_path, class: "create-item-btn" %>
-  </div
-  >
-  <div class="item-list">
-    <h4><%= "RECOMMENDED ITEMS FOR SALE" %></h4>
-  </div>
+<div class="sell-btn">
+  <%= link_to "sell an item", items_new_path, class: "create-item-btn" %>
+</div>
+<%= form_with url: items_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "find a item"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
+<div class="item-list">
+  <h4><%= "RECOMMENDED ITEMS FOR SALE" %></h4>
+</div>
 
 
   <div class="cards d-flex flex-wrap justify-content-around">
