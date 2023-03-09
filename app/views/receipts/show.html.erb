@@ -22,7 +22,8 @@
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 text-end info">
                 <p><strong>Receipt info</strong></p>
-                        <em><%= @receipt.created_at %></em>
+                        <em><%= @receipt.created_at.strftime("%d-%m-%Y") %></em>
+                        <br>
                         <em>Receipt Number :<%= @receipt.id %></em>
                 </div>
             </div>
