@@ -1,28 +1,32 @@
-<div class="detail-page d-flex justify-content-evenly mb-5 mt-1">
-  <h2><%= "ITEM DETAILS" %></h2>
-</div>
-<div class="dp">
-  <div class="container d-flex justify-content-start m-3">
-    <% if @item.photo.attached? %>
-
-      <%= cl_image_tag @item.photo.key, height: 300, width: 400, crop: :fill %>
-    <div class="description justify-content-start p-5 ">
-    <% end %>
-
-      <h4><strong><%= @item.item_name %></strong></h4>
-      <p><strong>$<%= @item.price %></strong></p>
-      <p><%= @item.description %></p>
-      <p>Sold by: <%= @item.user.fullname %></p>
+<h2 class="text-center my-4"><%= "ITEM DETAILS" %></h2>
+<div class="dp" id="details-description-card">
+  <div class="description d-flex m-5" >
+    <div class="details-img">
+      <% if @item.photo.attached? %>
+        <%= cl_image_tag @item.photo.key, height: 300, width: 400, crop: :fill, class: "details-img" %>
+      <% end %>
     </div>
-  </div>
+    <div class="container p-3">
+      <div class="mb-5">
+        <h4><strong><%= @item.item_name %></strong></h4>
+        <p><strong>$<%= @item.price %></strong></p>
+        <p><%= @item.description %></p>
+        <p>Sold by: <%= @item.user.fullname %></p>
+      </div>
 
-  <div class="container  m-2">
-    <% if current_user == @item.user%>
-      <p><%= link_to "edit item",  edit_item_path(@item),class: "create-item-btn"%></p>
-      <p><%= link_to "Delete this listing",
-        delete_item_path(@item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},class: "create-item-btn"%></p>
-    <% else %>
-      <p><%= link_to "buy Item", new_receipts_path(@item),data: { "turbo-method": :post }, class: "btn btn-primary"%></p>
-    <% end %>
+      <% if current_user == @item.user%>
+        <div class="d-flex justify-content-end align-content-end">
+            <%= link_to "edit item",  edit_item_path(@item),class: "create-item-btn"%>
+            <%= link_to "Delete this listing",
+              delete_item_path(@item),
+              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+              class: "create-item-btn"%>
+        </div>
+      <% else %>
+        <div class="d-flex align-self-end justify-content-end">
+            <%= link_to "buy Item", new_receipts_path(@item),data: { "turbo-method": :post }, class: "create-item-btn"%>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
