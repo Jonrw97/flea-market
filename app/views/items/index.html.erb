@@ -28,10 +28,8 @@
             <h3><%= item.item_name %></h3>
             </div>
             <div class="card-body d-flex justify-content-between">
-              <%# <li> %>
               <%= link_to "Details", item_path(item), class: "create-item-btn"%>
               <p><%= "$ #{item.price}" %></p>
-              <%# </li> %>
           </div>
         </div>
       <% end %>
