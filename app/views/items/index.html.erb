@@ -1,5 +1,5 @@
-  <div class="sell-btn">
-    <%= link_to "SELL AN ITEM", items_new_path, class: "sell-item-btn" %>
+  <div class="sell-btn sticky-top">
+      <%= link_to "SELL AN ITEM", items_new_path, class: "sell-item-btn" %>
   </div>
 <div class="index">
   <%= form_with url: items_path, method: :get, class: "d-flex ps-5 pe-5 mb-5" do %>
@@ -28,10 +28,8 @@
             <h3><%= item.item_name %></h3>
             </div>
             <div class="card-body d-flex justify-content-between">
-              <%# <li> %>
               <%= link_to "Details", item_path(item), class: "create-item-btn"%>
               <p><%= "$ #{item.price}" %></p>
-              <%# </li> %>
           </div>
         </div>
       <% end %>

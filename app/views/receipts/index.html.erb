@@ -3,6 +3,8 @@
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSst3ib_QSBZRUId-fqyzOFIsRxyajOIGzHdw&usqp=CAU" id="avatar" alt="avatar">
         <p class="ms-2"><%=current_user.fullname %></p>
   </div>
+  
+  <div class="stats"></div>
 
   <div class="container-bg d-flex flex-wrap justify-content-around">
     <div class="profile-card">
@@ -25,8 +27,10 @@
               </div>
 
               <% if s.receipt.nil? %>
+                <% @selling_count += 1 %>
                 <p><%= link_to "Details", item_path(s), class: "create-item-btn"%></p>
               <% else %>
+                <% @sold_count += 1 %>
                 <p><%= link_to "Receipt", receipt_path(s.receipt), class: "create-item-btn"%></p>
               <% end %>
 
@@ -56,6 +60,10 @@
               <p><%= link_to "Receipt", receipt_path(b), class: "create-item-btn"%></p>
             </div>
           </div>
-        <% end %>
-    </div>
+          <% end %>
+      </div>
+      
 </div>
+<%= @buy.count %>
+<%= @sold_count %>
+<%= @selling_count %>
