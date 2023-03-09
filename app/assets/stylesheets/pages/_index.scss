@@ -10,6 +10,10 @@
   margin: 5px;
 }
 
+.warning {
+  background-color: #9a031e;
+}
+
 a:hover {
   background-color: lightgray;
   color: black;
@@ -31,7 +35,7 @@ a:hover {
 .profile-card {
   border: black 1px solid;
   border-radius: 8px;
-  box-shadow: 2px 2px 2px 2px #2F3E46;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   padding: 70px;
   background-color: #CED4DA;
 }
@@ -51,6 +55,7 @@ a {
 
 .index {
   background-color: #CAD2C5;
+  padding-top: 30px;
 }
 
 h3 {
@@ -62,7 +67,7 @@ h3 {
   border: 1px solid grey;
   border-radius: 8px;
   margin-left: 20px;
-  box-shadow: 2px 2px 2px 2px #354F52;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   font-family: Lora;
 }
 
@@ -96,7 +101,7 @@ h3 {
   padding: 15px;
   border-radius: 5px;
   margin-bottom: 8px;
-  box-shadow: 1px 1px 1px 1px darkgray;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 
 #avatar {
@@ -109,4 +114,16 @@ h3 {
 
 #details-description-card {
   padding: 50px;
+}
+
+.sell-item-btn {
+  padding: 15px;
+  margin: 15px;
+  background-color: #40916c;
+  color: white;
+  width: 200px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  font-size: large;
 }
