@@ -3,24 +3,58 @@
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSst3ib_QSBZRUId-fqyzOFIsRxyajOIGzHdw&usqp=CAU" id="avatar" alt="avatar">
         <p class="ms-2"><%=current_user.fullname %></p>
   </div>
+
   <div class="container-bg d-flex flex-wrap justify-content-around">
     <div class="profile-card">
       <h4>My Items For Sale</h4>
         <% @sell.each do |s| %>
-      <div class="profile-card-new">
-          <% if s.receipt.nil? %>
-            <p>For Sale: <%= link_to s.item_name, item_path(s)%></p>
-            <% else %>
-            <p>Sold: <%= link_to s.item_name, receipt_path(s.receipt)%></p>
-          <% end %>
-        </div>
+          <div class="description d-flex m-5" >
+
+            <div class="profile-img">
+              <% if s.photo.attached? %>
+                <%= cl_image_tag s.photo.key, height: 72, width: 96, crop: :fill, class: "profile-img" %>
+              <% end %>
+            </div>
+
+            <div class="container p-3">
+              <div class="mb-5">
+                <h4><strong><%= s.item_name %></strong></h4>
+                <p><strong>$<%= s.price %></strong></p>
+                <p><%= s.description %></p>
+                <p>Sold by: <%= s.user.fullname %></p>
+              </div>
+
+              <% if s.receipt.nil? %>
+                <p><%= link_to "Details", item_path(s), class: "create-item-btn"%></p>
+              <% else %>
+                <p><%= link_to "Receipt", receipt_path(s.receipt), class: "create-item-btn"%></p>
+              <% end %>
+
+            </div>
+          </div>
         <% end %>
     </div>
+
     <div class="profile-card">
       <h4>Bought Items</h4>
         <% @buy.each do |b| %>
-        <div class="profile-card-new">
-          <p><%= link_to b.item.item_name, receipt_path(b)%></p>
+        <div class="description d-flex m-5" >
+
+            <div class="profile-img">
+              <% if b.item.photo.attached? %>
+                <%= cl_image_tag b.item.photo.key, height: 36, width: 48, crop: :fill, class: "profile-img" %>
+              <% end %>
+            </div>
+
+            <div class="container p-3">
+              <div class="mb-5">
+                <h4><strong><%= b.item.item_name %></strong></h4>
+                <p><strong>$<%= b.item.price %></strong></p>
+                <p><%= b.item.description %></p>
+                <p>Sold by: <%= b.item.user.fullname %></p>
+              </div>
+              <p><%= link_to "Receipt", receipt_path(b), class: "create-item-btn"%></p>
+            </div>
           </div>
         <% end %>
     </div>
