@@ -1,2 +1,8 @@
-<h4><%= user.fullname %></h4>
+<% if current_user == user %>
+<h4>You Are Here</h4>
 <p><%= user.address %></p>
+<% else %>
+<h4>Seller location</h4>
+<h6><%= user.fullname %></h6>
+<p><%= user.address %></p>
+<% end %>
