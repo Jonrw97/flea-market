@@ -9,9 +9,9 @@
     <div class="container p-3">
       <div class="mb-5">
         <h4><strong><%= @item.item_name %></strong></h4>
-        <p><strong>$<%= @item.price %></strong></p>
-        <p><%= @item.description %></p>
-        <p>Sold by: <%= @item.user.fullname %></p>
+        <p><strong><i class="fa-solid fa-sack-dollar"></i> <%= @item.price %></strong></p>
+        <p><i class="fa-solid fa-caret-right"></i> <%= @item.description %></p>
+        <p><i class="fa-regular fa-user"></i> <%= @item.user.fullname %></p>
       </div>
 
       <% if current_user == @item.user%>
