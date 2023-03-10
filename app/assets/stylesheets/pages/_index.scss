@@ -10,6 +10,10 @@
   margin: 5px;
 }
 
+.warning {
+  background-color: #9a031e;
+}
+
 a:hover {
   background-color: lightgray;
   color: black;
@@ -31,8 +35,10 @@ a:hover {
 .profile-card {
   border: black 1px solid;
   border-radius: 8px;
-  box-shadow: 2px 2px 2px 2px gray;
-  padding: 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  padding: 50px;
+  background-color: #CED4DA;
+  width: 45%;
 }
 
 .card {
@@ -50,8 +56,105 @@ a {
 
 .index {
   background-color: #CAD2C5;
+  padding-top: 30px;
 }
 
 h3 {
   padding: 5px;
+}
+
+.description {
+  background-color: lightgrey;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  margin-left: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.dp {
+  background-color: #CAD2C5;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.profile {
+  height: 80px;
+  margin-right: 20px;
+  padding: 20px;
+}
+
+.name {
+  margin-right: 20px;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.container-bg {
+  background-color: #CAD2C5;
+  padding: 100px;
+  border-radius: 5px;
+  background-image: linear-gradient(#84A98C, #CAD2C5);
+}
+
+.profile-card-new {
+  background-color: #e9ecef;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+#avatar {
+  border-radius: 50%;
+}
+
+.details-img {
+  border-radius: 8px 0 0 8px;
+}
+
+#details-description-card {
+  padding: 50px;
+}
+
+.sell-item-btn {
+  padding: 15px;
+  margin: 15px;
+  background-color: #40916c;
+  color: white;
+  width: 200px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  font-size: large;
+}
+
+
+.profile-img {
+  border-radius: 8px;
+}
+.navbar {
+  background-image: linear-gradient(#52796F, #CAD2C5);
+}
+
+.home-logo {
+  height: 50px;
+}
+
+.new-item {
+  margin-top: 15px;
+  border: darkgray solid 2px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  background-color: #CAD2C5;
+  padding: 15px;
+}
+
+.profile-item-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item-description {
+  font-size: 10px;
 }
