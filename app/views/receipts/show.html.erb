@@ -5,24 +5,24 @@
                 <div class="col-xs-6 col-sm-6 col-md-6">
                     <address class="info">
                     <p><strong>Seller info</strong></p>
-                     <%=  @receipt.item.user.fullname %>
+                     <i class="fa-regular fa-user"></i> <%=  @receipt.item.user.fullname %>
                      <br>
-                        <%= @receipt.item.user.address %>
+                        <i class="fa-solid fa-location-dot"></i> <%= @receipt.item.user.address %>
                         <br>
-                        <%=@receipt.item.user.email%>
+                        <i class="fa-regular fa-envelope"></i> <%=@receipt.item.user.email%>
                         <br>
                         <br>
                        <p><strong>Buyer info</strong></p>
-                       <%=  @receipt.user.fullname %>
+                       <i class="fa-regular fa-user"></i> <%=  @receipt.user.fullname %>
                      <br>
-                        <%= @receipt.user.address %>
+                        <i class="fa-solid fa-location-dot"></i> <%= @receipt.user.address %>
                         <br>
-                        <%=@receipt.user.email%>
+                        <i class="fa-regular fa-envelope"></i> <%=@receipt.user.email%>
                     </address>
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 text-end info">
                 <p><strong>Receipt info</strong></p>
-                        <em><%= @receipt.created_at.strftime("%d-%m-%Y") %></em>
+                        <i class="fa-regular fa-calendar"></i> <em><%= @receipt.created_at.strftime("%d-%m-%Y") %></em>
                         <br>
                         <em>Receipt Number :<%= @receipt.id %></em>
                 </div>
