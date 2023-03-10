@@ -1,8 +1,12 @@
 <% if current_user == user %>
-<h4>You Are Here</h4>
-<p><%= user.address %></p>
+  <h4>You Are Here</h4>
+  <p><%= user.address %></p>
 <% else %>
-<h4>Seller location</h4>
-<h6><%= user.fullname %></h6>
-<p><%= user.address %></p>
+  <% if current_user == @receipt.user %>
+    <h4>Seller location</h4>
+  <% else %>
+    <h4>Buyer location</h4>
+  <% end %>
+  <h6><%= user.fullname %></h6>
+  <p><%= user.address %></p>
 <% end %>
