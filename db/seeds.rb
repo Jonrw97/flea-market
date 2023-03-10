@@ -18,7 +18,7 @@ p 'Creating users'
 user1 = User.create(
   first_name: "Campbell",
   last_name: "Davies-Webb",
-  address: "Split, Croatia",
+  address: "Bergen, Norway",
   email: "camie@gmail.com",
   password: 'test123'
 )
@@ -58,7 +58,7 @@ p "Created item id: #{item2.id}"
 user2 = User.create(
   first_name: "Jonathan",
   last_name: "Watkins",
-  address: "Ferrari World, Abu Dhabi",
+  address: "Tromso, Norway",
   email: "jon@gmail.com",
   password: 'test123'
 )
@@ -98,7 +98,7 @@ p "Created item id: #{item4.id}"
 user3 = User.create(
   first_name: "Saaj",
   last_name: "Mathen",
-  address: "seoul",
+  address: "Oslo, Norway",
   email: "saaj@gmail.com",
   password: 'test123'
 )
@@ -138,7 +138,7 @@ p "Created item id: #{item6.id}"
 user4 = User.create(
   first_name: "Joshua",
   last_name: "Singrew",
-  address: "Sicily, Italy",
+  address: "Trondheim, Norway",
   email: "topshagger@gmail.com",
   password: 'test123'
 )
