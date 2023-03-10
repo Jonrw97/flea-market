@@ -7,8 +7,9 @@ class ReceiptsController < ApplicationController
     @sell = current_user.items
     receipts = Receipt.all
     @buy = receipts.select { |r| current_user.id == r.user_id }
-    @sold_count = 0
     @selling_count = 0
+    @sell.each { |s| @selling_count += 1 if s.receipt.nil? }
+    @sold_count = @sell.count - @selling_count
   end
 
   def create
