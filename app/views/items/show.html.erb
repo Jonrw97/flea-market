@@ -30,3 +30,16 @@
     </div>
   </div>
 </div>
+
+<div class= "container">
+<%= simple_form_for [@item, @bid] do |f| %>
+  <%= f.input :ammount, :label => "$" %>
+    <%= f.button :submit %>
+<% end %>
+
+<h3>Bids on your item</h3>
+<% @bids.each do |bid| %>
+<p><%= bid.ammount %></p>
+<p><%= bid.user.fullname %></p>
+<% end %>
+</div>
