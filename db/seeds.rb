@@ -67,7 +67,7 @@ p "creating items for user #{user2.id}"
 
 item3 = Item.new(
   item_name: "Bugatti",
-  description: "Incredibly fast whip - so fast it'll blow your eye balls out ",
+  description: "Incredibly Fast Whip - so fast it'll blow your eye balls out ",
   price: 100000,
   user_id: user2.id
 )
@@ -98,7 +98,7 @@ p "Created item id: #{item4.id}"
 user3 = User.create(
   first_name: "Saaj",
   last_name: "Mathen",
-  address: "ski, Norway",
+  address: "Ski, Norway",
   email: "saaj@gmail.com",
   password: 'test123'
 )
@@ -107,7 +107,7 @@ p "creating items for user #{user3.id}"
 
 item5 = Item.new(
   item_name: "Capybara",
-  description: "veryyyyyyyyy Big rat",
+  description: "Veryyyyyyyyy Big Rat",
   price: 1500,
   user_id: user3.id
 )
@@ -120,7 +120,7 @@ item5.save
 p "Created item id: #{item5.id}"
 
 item6 = Item.new(
-  item_name: "Open Bottle of tequila",
+  item_name: "Open Bottle of Tequila",
   description: "1 tequila, 2 tequila, 3 tequila, floor ...",
   price: 2000,
   user_id: user3.id
@@ -161,7 +161,7 @@ p "Created item id: #{item7.id}"
 
 item8 = Item.new(
   item_name: "Chucky",
-  description: "will watch your kids when you go out for dinner.",
+  description: "Will watch your kids when you go out for dinner.",
   price: 2000,
   user_id: user4.id
 )

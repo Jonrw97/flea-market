@@ -10,6 +10,16 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    users = User.where("id = ? or id = ?", @item.user.id, current_user.id)
+
+    @markers = users.geocoded.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude,
+        info_window_html: render_to_string(partial: "_info_window", locals: { user: }),
+        marker_html: render_to_string(partial: "marker", locals: { user: })
+      }
+    end
   end
 
   def edit
