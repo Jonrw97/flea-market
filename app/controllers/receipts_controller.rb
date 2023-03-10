@@ -1,6 +1,15 @@
 class ReceiptsController < ApplicationController
   def show
     @receipt = Receipt.find(params[:id])
+    users = User.where("id = ? or id = ?", @receipt.user.id, @receipt.item.user)
+
+    @markers = users.geocoded.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude,
+        info_window_html: render_to_string(partial: "_info_window", locals: { user: }),
+      }
+    end
   end
 
   def index
