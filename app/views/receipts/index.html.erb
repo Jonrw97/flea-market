@@ -3,59 +3,91 @@
   <p class="ms-2"><%=current_user.fullname %></p>
 </div>
 
-<div class="stats"></div>
 
-<div class="container-bg d-flex justify-content-between">
-  <div class="profile-card">
-    <h4>My Items For Sale</h4>
-    <% @sell.each do |s| %>
-      <div class="description d-flex" >
-        <% if s.photo.attached? %>
-          <%= cl_image_tag s.photo.key, height: 150, width: 130, crop: :fill, class: "profile-img" %>
-        <% end %>
+<div class="container-bg">
 
-        <div class="container">
-          <div class="d-flex justify-content-between">
-            <h6><strong><%= s.item_name %></strong></h6>
-            <p><strong>$<%= s.price %></strong></p>
+
+  <div class="container-stats d-flex justify-content-center mb-5">
+    <div class="stats">
+      <div class="stats-and-bought">
+        <div class="bought-card">
+          <h2>Sold</h2>
+          <div class="bought" id="sold">
+            <%= @sold_count %>
           </div>
-          <p class="item-description"><%= s.description %></p>
-
-          <% if s.receipt.nil? %>
-            <% @selling_count += 1 %>
-            <p><%= link_to "Details", item_path(s), class: "create-item-btn"%></p>
-          <% else %>
-            <% @sold_count += 1 %>
-            <p><%= link_to "Receipt", receipt_path(s.receipt), class: "create-item-btn"%></p>
-          <% end %>
-
         </div>
+
+        <div class="bought-card">
+          <h2>Selling</h2>
+          <div class="bought" id="Selling">
+            <%= @selling_count %>
+          </div>
         </div>
-          <% end %>
+
+        <div class="bought-card">
+          <h2>Bought</h2>
+          <div class="bought" id="bought">
+            <%=  @buy.count %>
+          </div>
+        </div>
       </div>
+    </div>
+  </div>
 
-      <div class="profile-card">
-        <h4>Bought Items</h4>
-          <% @buy.each do |b| %>
-          <div class="description d-flex" >
 
-              <div class="profile-img">
-                <% if b.item.photo.attached? %>
-                  <%= cl_image_tag b.item.photo.key, height: 150, width: 130, crop: :fill, class: "profile-img" %>
-                <% end %>
-              </div>
+  <div class="container d-flex justify-content-between">
 
-              <div class="container">
-                <div class="d-flex justify-content-between">
-                  <h6><strong><%= b.item.item_name %></strong></h6>
-                  <p><strong>$<%= b.item.price %></strong></p>
+    <div class="profile-card">
+      <h4>My Items For Sale</h4>
+      <% @sell.each do |s| %>
+        <div class="description d-flex" >
+          <% if s.photo.attached? %>
+            <%= cl_image_tag s.photo.key, height: 150, width: 130, crop: :fill, class: "profile-img" %>
+          <% end %>
 
-                </div>
-                  <p class="item-description"><%= b.item.description %></p>
-                <p><%= link_to "Receipt", receipt_path(b), class: "create-item-btn"%></p>
-              </div>
+          <div class="container">
+            <div class="d-flex justify-content-between">
+              <h6><strong><%= s.item_name %></strong></h6>
+              <p><strong>$<%= s.price %></strong></p>
             </div>
+            <p class="item-description"><%= s.description %></p>
+
+            <% if s.receipt.nil? %>
+
+              <p><%= link_to "Details", item_path(s), class: "create-item-btn"%></p>
+            <% else %>
+              <% @sold_count += 1 %>
+              <p><%= link_to "Receipt", receipt_path(s.receipt), class: "create-item-btn"%></p>
             <% end %>
+
+          </div>
+          </div>
+            <% end %>
+        </div>
+
+        <div class="profile-card">
+          <h4>Bought Items</h4>
+            <% @buy.each do |b| %>
+            <div class="description d-flex" >
+
+                <div class="profile-img">
+                  <% if b.item.photo.attached? %>
+                    <%= cl_image_tag b.item.photo.key, height: 150, width: 130, crop: :fill, class: "profile-img" %>
+                  <% end %>
+                </div>
+
+                <div class="container">
+                  <div class="d-flex justify-content-between">
+                    <h6><strong><%= b.item.item_name %></strong></h6>
+                    <p><strong>$<%= b.item.price %></strong></p>
+
+                  </div>
+                    <p class="item-description"><%= b.item.description %></p>
+                  <p><%= link_to "Receipt", receipt_path(b), class: "create-item-btn"%></p>
+                </div>
+              </div>
+              <% end %>
+  </div>
 </div>
 
 <%#
